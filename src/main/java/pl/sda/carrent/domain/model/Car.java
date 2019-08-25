@@ -25,7 +25,7 @@ public class Car {
 
     private String vin;
 
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "car_id")
     private Set<CarReservation> reservations;
 
