@@ -20,6 +20,7 @@ public class CarService {
 
     public void create(CarDto carDto) {
         Optional<Car> carWithSameVin = carRepository.findByVin(carDto.getVin());
+
         if (carWithSameVin.isPresent()) {
             throw new CarAlreadyExistsException();
         }

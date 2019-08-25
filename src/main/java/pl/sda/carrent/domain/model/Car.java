@@ -1,9 +1,6 @@
 package pl.sda.carrent.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import pl.sda.carrent.infrastructure.dto.CarDto;
 
 import javax.persistence.*;
@@ -15,6 +12,7 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 @Getter
+@EqualsAndHashCode
 public class Car {
 
     @Id
