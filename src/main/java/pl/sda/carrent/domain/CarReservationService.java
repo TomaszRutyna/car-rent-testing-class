@@ -22,7 +22,7 @@ public class CarReservationService {
 
     @Transactional
     public void create(CarReservationDto carReservationDto) {
-        Optional<Car> car = carRepository.findById(carReservationDto.getId());
+        Optional<Car> car = carRepository.findById(carReservationDto.getCarId());
         if (!car.isPresent()) {
             throw new CarNotExistException();
         }
