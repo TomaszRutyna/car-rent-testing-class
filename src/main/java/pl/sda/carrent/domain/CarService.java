@@ -35,7 +35,7 @@ public class CarService {
     @Transactional
     public void update(CarDto carDto) {
         Optional<Car> carWithId = carRepository.findById(carDto.getId());
-        if (carWithId.isPresent()) {
+        if (!carWithId.isPresent()) {
             throw new CarNotExistException();
         }
 

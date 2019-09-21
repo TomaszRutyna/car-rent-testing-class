@@ -32,7 +32,7 @@ public class Car {
     public void update(CarDto dto) {
         this.brand = dto.getBrand();
         this.model = dto.getModel();
-        this.model = dto.getVin();
+        this.vin = dto.getVin();
     }
 
 }
