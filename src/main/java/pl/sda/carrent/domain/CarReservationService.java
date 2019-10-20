@@ -49,7 +49,8 @@ public class CarReservationService {
     }
 
     private void checkIfReserved(Car car, LocalDate from, LocalDate to) {
-        boolean hasConflict = car.getReservations().stream().anyMatch(res -> isReservationInRange(res, from, to));
+        boolean hasConflict = car.getReservations().stream()
+                .anyMatch(res -> isReservationInRange(res, from, to));
 
         if (hasConflict) {
             throw new CarAlreadyReservedException();
