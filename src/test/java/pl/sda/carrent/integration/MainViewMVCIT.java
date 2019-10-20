@@ -25,7 +25,8 @@ public class MainViewMVCIT {
     public void shouldDisplayMainView() throws Exception {
         //when
         ResultActions result =
-                mockMvc.perform(MockMvcRequestBuilders.get("/main?city=Lublin"))
+                mockMvc.perform(
+                    MockMvcRequestBuilders.post("/main?city=Lublin"))
                         .andDo(print());
         //then
         result.andExpect(model().attribute("city", "Lublin"))
